@@ -1,9 +1,7 @@
 #include <Roomba.h>
 
-Roomba::Roomba(int pinRX, int pinTX, int pinDD) : link(pinRX, pinTX)
+Roomba::Roomba( int pinDD)
 {
-  rxdPin = pinRX;
-  txdPin = pinTX;
   ddPin = pinDD;
 }
 

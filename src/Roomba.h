@@ -2,7 +2,7 @@
 #define roomba_h
 
 #include <Arduino.h>
-#include <SoftwareSerial.h>
+#include <HardwareSerial.h>
 
 #undef max
 
@@ -13,7 +13,7 @@ private:
   int txdPin;
   int ddPin;
 
-  SoftwareSerial link;
+  HardwareSerial& link = Serial2;
 
   char sensorbytes[10];
   //#define bumpright (sensorbytes[0] & 0x01)
@@ -23,7 +23,7 @@ private:
 
 public:
 
-  Roomba(int pinRX, int pinTX, int pinDD);
+  Roomba(int pinDD);
 
   bool begin();
   void resetbaud();
